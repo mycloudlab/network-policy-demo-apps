@@ -2,7 +2,7 @@
 FROM andreptb/maven:3.2.5-jdk6
 WORKDIR /app
 ADD . /app
-RUN mvn package -Dhttp.proxyHost=172.19.30.219 -Dhttp.proxyPort=1212 -Dhttps.proxyHost=172.19.30.219 -Dhttps.proxyPort=1212
+RUN mvn package 
 
 FROM davidcaste/alpine-tomcat:tomcat7
 WORKDIR /root/
