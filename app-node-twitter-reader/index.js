@@ -16,6 +16,7 @@ async function getTweets(q) {
 
         client.get('search/tweets', { q }, function (error, tweets, response) {
             if (error) {
+                console.log(error);
                 reject(error);
                 return;
             }
@@ -33,7 +34,6 @@ var Brakes = require('brakes');
 const brake = new Brakes(getTweets, {
     timeout: 3000,
     fallback: (err) => {
-        console.log(err);
         Promise.resolve({
             result: 'fallback',
             message: 'remote tweets is not availability',
