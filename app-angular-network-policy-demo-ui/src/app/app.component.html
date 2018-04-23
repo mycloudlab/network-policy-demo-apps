@@ -1,0 +1,85 @@
+<div class="row">
+  <div class="col-md-6">
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Microservice php random value service</h3>
+        <span *ngIf="randomConnected" class="label label-success">
+          connected
+          </span>
+        <span *ngIf="!randomConnected" class="label label-danger">
+          not connected
+          </span>
+      </div>
+      <div class="panel-body">
+        <canvas baseChart [chartType]="'line'" [datasets]="chartData" [labels]="chartLabels" [options]="chartOptions" [legend]="true">
+        </canvas>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md-6">
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Microservice node remote datetime service</h3>
+        <span *ngIf="datetimeConnected" class="label label-success">
+          connected
+          </span>
+        <span *ngIf="!datetimeConnected" class="label label-danger">
+          not connected
+          </span>
+      </div>
+      <div class="panel-body">
+        <div style="text-align:center; font-size:9.2rem">
+          {{date}}<br> {{time}}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Microservice node tweets search</h3>
+        <span *ngIf="tweetConnected" class="label label-success">
+          connected
+          </span>
+        <span *ngIf="!tweetConnected" class="label label-danger">
+          not connected
+          </span>
+      </div>
+      <div class="panel-body">
+
+        <div class="row">
+          <div class="col-md-11 form-group">
+            <input class="form-control" [(ngModel)]="searchTerm" />
+          </div>
+          <div class="col-md-1 form-group">
+            <button class="btn btn-primary" (click)="search()">Search</button>
+          </div>
+        </div>
+
+        <div class="row" *ngFor="let tweet of tweets.data.statuses">
+          <div class="col-md-12">
+
+            <div class="panel panel-default">
+              <div class="panel-body">
+                {{tweet.text}}
+              </div>
+              <div class="panel-footer">{{tweet.created_at}} - @{{tweet.user.screen_name}} ({{tweet.user.name}})</div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+      </div>
+
+    </div>
+  </div>
