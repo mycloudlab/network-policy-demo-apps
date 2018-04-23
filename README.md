@@ -51,7 +51,7 @@ oc expose service ui --hostname=netpol-demo.cluster.local
 oc new-project struts-legacy-demo
 
 # deploy vunerable struts app (CVE-2013-2251)
-oc new-app --name=netpol-struts-demo --docker-image=mycloudlab/net-pol-demo
+oc new-app --name=netpol-struts-demo --docker-image=mycloudlab/net-pol-demo-struts-app
 
 # expose app
 oc expose service netpol-struts-demo --hostname=netpol-struts-demo.cluster.local
