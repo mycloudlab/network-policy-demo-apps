@@ -32,11 +32,14 @@ async function getTweets(q) {
 var Brakes = require('brakes');
 const brake = new Brakes(getTweets, {
     timeout: 3000,
-    fallback: () => Promise.resolve({
-        result: 'fallback',
-        message: 'remote tweets is not availability',
-        data: ''
-    })
+    fallback: (err) => {
+        console.log(err);
+        Promise.resolve({
+            result: 'fallback',
+            message: 'remote tweets is not availability',
+            data: ''
+        })
+    }
 });
 
 // serve with http
