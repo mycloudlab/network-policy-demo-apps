@@ -11,14 +11,16 @@ RUN mkdir /opt && \
     unzip apache-tomcat-6.0.0.zip && \
     rm *.zip && \
     chmod +x /opt/apache-tomcat-6.0.0/bin/*.sh && \
-    
+    rm /opt/apache-tomcat-6.0.0/webapps/* && \
+
     cd /app && \
     /opt/apache-maven-3.0.5/bin/mvn package  -Dhttp.proxyHost=172.19.30.219 -Dhttp.proxyPort=1212 -Dhttps.proxyHost=172.19.30.219 -Dhttps.proxyPort=1212 && \
     mv target/struts-networkpolicy-demo*.war /opt/apache-tomcat-6.0.0/webapps/ROOT.war && \
     chmod 777 /opt/apache-tomcat-6.0.0 -R && \
 
     rm ~/.m2 -rf && \
-    rm /opt/apace-maven* -rf 
+    rm /opt/apache-maven* -rf 
+    
 
 EXPOSE 8080 
 
