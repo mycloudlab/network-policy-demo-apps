@@ -14,7 +14,7 @@ RUN mkdir /opt && \
     rm /opt/apache-tomcat-6.0.0/webapps/* -rf && \
 
     cd /app && \
-    /opt/apache-maven-3.0.5/bin/mvn package  -Dhttp.proxyHost=172.19.30.219 -Dhttp.proxyPort=1212 -Dhttps.proxyHost=172.19.30.219 -Dhttps.proxyPort=1212 && \
+    /opt/apache-maven-3.0.5/bin/mvn package  && \
     mv target/struts-networkpolicy-demo*.war /opt/apache-tomcat-6.0.0/webapps/ROOT.war && \
     chmod 777 /opt/apache-tomcat-6.0.0 -R && \
 
