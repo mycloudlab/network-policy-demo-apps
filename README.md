@@ -18,7 +18,7 @@ This recipe does not support **oc cluster up**
 
 ```bash
 # create microservices project
-oc new-project netpol-ms-demo
+oc new-project net-pol-ms-demo
 
 # deploy random-value app
 oc new-app --name=random-value --docker-image=mycloudlab/net-pol-demo-random-value
