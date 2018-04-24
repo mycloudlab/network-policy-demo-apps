@@ -69,7 +69,7 @@ oc label namespace default name=default
 
 ```bash
 # deny all ingress traffic for all pods
-oc create -n net-pol-ms-demo f - <<EOF
+oc create -n net-pol-ms-demo -f - <<EOF
 kind: NetworkPolicy
 apiVersion: networking.k8s.io/v1
 metadata:
