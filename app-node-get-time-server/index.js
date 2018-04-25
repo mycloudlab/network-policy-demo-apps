@@ -4,7 +4,7 @@ var moment = require('moment-timezone')
 // fetch remote time from header
 async function getRemoteDateTime() {
     try {
-        response = await request({ uri: 'https://ntp.br/', resolveWithFullResponse: true });
+        response = await request({ uri: 'http://ntp.br/', resolveWithFullResponse: true });
         data = moment(response.headers.date);
         return {
             result: 'ok',
