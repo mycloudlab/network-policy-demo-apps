@@ -44,7 +44,7 @@ oc new-app --name=ui --docker-image=mycloudlab/net-pol-demo-ui  \
 -e BFF_URL=http://bff-web:3000 
 
 # expose ui
-oc expose service ui --hostname=netpol-demo.cluster.local
+oc expose service ui 
 
 
 # create new struts project
@@ -54,7 +54,7 @@ oc new-project struts-legacy-demo
 oc new-app --name=netpol-struts-demo --docker-image=mycloudlab/net-pol-demo-struts-app
 
 # expose app
-oc expose service netpol-struts-demo --hostname=netpol-struts-demo.cluster.local
+oc expose service netpol-struts-demo 
 ```
 
 
